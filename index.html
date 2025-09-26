@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhara — Portfolio</title>
+  <meta name="description" content="Dhara's personal portfolio — projects, skills and contact." />
+  <style>
+    :root{
+      --bg:#0f1724; /* deep blue */
+      --card:#0b1320;
+      --muted:#9aa6b2;
+      --accent:#7dd3fc; /* cyan */
+      --accent-2:#a78bfa; /* purple */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#07101a);color:#e6eef6;line-height:1.5}
+    .container{max-width:1000px;margin:36px auto;padding:28px}
+
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:#022}
+    h1{font-size:28px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:22px}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .about p{color:var(--muted)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .skill{padding:8px 10px;background:rgba(255,255,255,0.03);border-radius:999px;font-size:13px;color:var(--muted)}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .project{padding:12px;background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);border-radius:12px}
+    .project h3{margin:0 0 6px;font-size:16px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+    .project .tags{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    .contact form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:inherit}
+    button{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:10px 14px;border-radius:10px;color:#022;font-weight:600;cursor:pointer}
+
+    .side .card{position:sticky;top:28px}
+    .meta{display:flex;flex-direction:column;gap:10px}
+    .meta a{color:var(--accent);text-decoration:none}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr}
+      .side .card{position:static}
+      header{gap:14px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar" aria-hidden="true">D</div>
+      <div>
+        <h1>Dhara — Designer &amp; Developer</h1>
+        <p class="lead">I build clean web experiences and thoughtful UI — focused on usability, performance, and pixel-perfect details.</p>
+        <nav aria-label="main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <section class="card about" id="about">
+        <h2>About me</h2>
+        <p>Hi — I'm <strong>Dhara</strong>. I love turning ideas into usable products. I enjoy solving UX problems and writing modern, maintainable front-end code. When I'm not coding I listen to music, explore new places, and experiment with minimal design systems.</p>
+
+        <div style="margin-top:14px">
+          <h3>Highlights</h3>
+          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+            <li>5+ web projects shipped (personal &amp; freelance)</li>
+            <li>Experience with HTML, CSS, JavaScript and modern frameworks</li>
+            <li>Focus on accessibility and responsive design</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3 id="projects">Selected projects</h3>
+          <div class="projects">
+            <article class="project">
+              <h3>Portfolio Website</h3>
+              <p>Personal branding site with a light-weight, responsive layout and performant images.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Accessibility</span></div>
+            </article>
+
+            <article class="project">
+              <h3>Task Manager App</h3>
+              <p>A small single-page app for managing tasks with local storage and a focus on UX.</p>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">UI</span></div>
+            </article>
+
+            <article class="project">
+              <h3>E‑commerce mock</h3>
+              <p>Shop UI prototype with product filters, responsive grid and cart interactions.</p>
+              <div class="tags"><span class="tag">Prototype</span><span class="tag">UX</span></div>
+            </article>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="side">
+        <div class="card meta">
+          <div>
+            <h3 id="skills">Skills</h3>
+            <div class="skills">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Responsive Design</span>
+              <span class="skill">Figma</span>
+              <span class="skill">Accessibility</span>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h3>Contact</h3>
+            <p style="margin:6px 0 0;color:var(--muted)">Email: <a href="mailto:dhara@example.com">dhara@example.com</a></p>
+            <p style="margin:6px 0 0;color:var(--muted)">Location: India</p>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <a href="#contact" style="padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none">Work with me</a>
+            <a href="#" style="padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none">Download Resume</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Quick Links</h3>
+          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+            <li><a h
